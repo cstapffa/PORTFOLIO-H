@@ -1,1 +1,5 @@
+# Node
 node_modules/
+
+# Sass cache
+.sass-cache/
