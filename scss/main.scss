@@ -27,6 +27,11 @@ section {
   height: 100vh;
 }
 
+
+/* article {
+  background-color: rgba(255, 255, 255, 0.8);
+} */
+
 #home {
   position: relative;
   h1 {
@@ -37,7 +42,7 @@ section {
   .big-signature {
     width: 16rem;
   }
-
+  
   .btn-home {
     border: none;
     background-color: white;
@@ -92,7 +97,7 @@ section {
       width: 1rem;
       margin-right: 1rem;
     }
-
+    
     span {
       position: relative;
       z-index: 1;
@@ -118,3 +123,47 @@ section {
     }
   }
 }
+
+/* Animaciones y transiciones */
+      .hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      
+      .visible {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .slide-in-left {
+        transform: translateX(-100%);
+        animation: slideInLeft 0.6s forwards;
+      }
+      
+      .slide-out-left {
+        transform: translateX(0);
+        animation: slideOutLeft 0.6s forwards;
+      }
+      
+      @keyframes slideInLeft {
+        from {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      
+      @keyframes slideOutLeft {
+        from {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        to {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+      }
+      
