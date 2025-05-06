@@ -14,19 +14,18 @@ $rainbow-gradient: linear-gradient(
   #c520c7 98%,
   #c11fcd 100%
 );
-
+html,
 body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
   background-color: #f5f5f5;
-  /*   background-image: url(https://res.cloudinary.com/dpushmfs0/image/upload/v1746420295/bg_csz1sf.jpg);
-  background-size: contain;
-  background-position:0%;
-  background-repeat:repeat-y; */
 }
 
 section {
   height: 100vh;
 }
-
 
 /* article {
   background-color: rgba(255, 255, 255, 0.8);
@@ -42,7 +41,7 @@ section {
   .big-signature {
     width: 16rem;
   }
-  
+
   .btn-home {
     border: none;
     background-color: white;
@@ -73,7 +72,7 @@ section {
       }
     }
     #rrss-home-line {
-      width: 2px;
+      width: 1.5px;
       height: 5rem;
       margin: 0 2.5rem;
       background-color: black;
@@ -97,7 +96,7 @@ section {
       width: 1rem;
       margin-right: 1rem;
     }
-    
+
     span {
       position: relative;
       z-index: 1;
@@ -125,45 +124,122 @@ section {
 }
 
 /* Animaciones y transiciones */
-      .hidden {
-        opacity: 0;
-        pointer-events: none;
-      }
-      
-      .visible {
-        opacity: 1;
-        pointer-events: auto;
-      }
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
 
-      .slide-in-left {
-        transform: translateX(-100%);
-        animation: slideInLeft 0.6s forwards;
-      }
-      
-      .slide-out-left {
-        transform: translateX(0);
-        animation: slideOutLeft 0.6s forwards;
-      }
-      
-      @keyframes slideInLeft {
-        from {
-          transform: translateX(-100%);
-          opacity: 0;
-        }
-        to {
-          transform: translateX(0);
-          opacity: 1;
-        }
-      }
-      
-      @keyframes slideOutLeft {
-        from {
-          transform: translateX(0);
-          opacity: 1;
-        }
-        to {
-          transform: translateX(100%);
-          opacity: 0;
-        }
-      }
-      
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* SALIDAS */
+.exitLeftSection {
+  transform: translateX(0);
+  animation: slideOutLeft 0.6s forwards;
+}
+
+.exitRightSection {
+  transform: translateX(0);
+  animation: slideOutRight 0.6s forwards;
+}
+
+.exitUpSection {
+  transform: translateY(0);
+  animation: slideOutUp 0.6s forwards;
+}
+
+.exitDownSection {
+  transform: translateY(0);
+  animation: slideOutDown 0.6s forwards;
+}
+
+/* ENTRADAS */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%); // corregido: ahora sale hacia la derecha
+    opacity: 0;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}

@@ -1,10 +1,12 @@
 import { hide, show } from "./helpers.js";
 
 // === HOME + SECTIONS ===
-let currentSection = "#home"; // para saber cuál se va
+let currentSection = "#home"; // pa saber cual se va
 
 function showSection(sectionId) {
-  transitionSection(currentSection, sectionId);
+  const { exit, enter } = getTransitionAnimation(currentSection, sectionId);
+
+  transitionSection(currentSection, sectionId, exit, enter);
   currentSection = sectionId;
 
   const sectionKey = sectionId.replace("#", "");
@@ -20,29 +22,6 @@ function showSection(sectionId) {
     }
   });
 }
-
-/* function showSection(sectionId) {
-  hide("#home");
-  hide("#about");
-  hide("#projects");
-  hide("#skills");
-  hide("#contact");
-
-  show(sectionId);
-
-  const sectionKey = sectionId.replace("#", "");
-  document.querySelectorAll(".side-menu").forEach((menu) => {
-    menu.querySelectorAll(".side-btn").forEach((btn) => {
-      btn.classList.remove("active");
-    });
-
-    const activeBtn = menu.querySelector(`.side-btn-${sectionKey}`);
-    if (activeBtn) {
-      activeBtn.classList.add("active");
-      updateSectionIcon(sectionKey);
-    }
-  });
-} */
 
 document.addEventListener("DOMContentLoaded", () => {
   show("#home");
@@ -156,45 +135,61 @@ function updateSectionIcon(sectionKey) {
   });
 }
 
-function transitionSection(fromId, toId) {
+function transitionSection(fromId, toId, exitSection, enterSection) {
   const fromEl = document.querySelector(fromId);
   const toEl = document.querySelector(toId);
 
-  // Mostrar el destino antes de animar
-  toEl.style.display = "flex"; // Asegura que es visible
+  toEl.style.display = "flex";
   toEl.classList.remove("hidden");
-  toEl.classList.add("slide-in-left");
+  toEl.classList.add(enterSection);
 
   fromEl.classList.remove("visible");
-  fromEl.classList.add("slide-out-left");
+  fromEl.classList.add(exitSection);
 
   setTimeout(() => {
-    fromEl.classList.remove("slide-out-left");
+    fromEl.classList.remove(exitSection);
     fromEl.classList.add("hidden");
-    fromEl.style.display = "none"; // Ocultarlo al terminar animación
+    fromEl.style.display = "none";
 
-    toEl.classList.remove("slide-in-left");
+    toEl.classList.remove(enterSection);
     toEl.classList.add("visible");
   }, 600);
+
+  /* console.log("fromEl:", fromEl, "adding", exitSection);
+  console.log("toEl:", toEl, "adding", enterSection); */
 }
 
-/* function transitionSection(fromId, toId) {
-  const fromEl = document.querySelector(fromId);
-  const toEl = document.querySelector(toId);
+function getTransitionAnimation(from, to) {
+  const key = `${from}->${to}`;
+  return (
+    transitionMap[key] || { exit: "exitLeftSection", enter: "enterLeftSection" }
+  );
+}
 
-  // Reset clases previas
-  fromEl.classList.remove("visible");
-  fromEl.classList.add("slide-out-left");
+const transitionMap = {
+  "#home->#about": { exit: "exitLeftSection", enter: "enterRightSection" },
+  "#home->#projects": { exit: "exitLeftSection", enter: "enterRightSection" },
+  "#home->#skills": { exit: "exitLeftSection", enter: "enterRightSection" },
+  "#home->#contact": { exit: "exitLeftSection", enter: "enterRightSection" },
 
-  toEl.classList.remove("hidden");
-  toEl.classList.add("slide-in-left");
+  "#about->#projects": { exit: "exitUpSection", enter: "enterDownSection" },
+  "#about->#skills": { exit: "exitUpSection", enter: "enterDownSection" },
+  "#about->#contact": { exit: "exitUpSection", enter: "enterDownSection" },
 
-  // Mostrar la nueva después de una pausa
-  setTimeout(() => {
-    fromEl.classList.remove("slide-out-left");
-    fromEl.classList.add("hidden");
+  "#projects->#about": { exit: "exitDownSection", enter: "enterUpSection" },
+  "#projects->#skills": { exit: "exitUpSection", enter: "enterDownSection" },
+  "#projects->#contact": { exit: "exitUpSection", enter: "enterDownSection" },
 
-    toEl.classList.remove("slide-in-left");
-    toEl.classList.add("visible");
-  }, 600); // coincide con la duración de la animación
-} */
+  "#skills->#about": { exit: "exitDownSection", enter: "enterUpSection" },
+  "#skills->#projects": { exit: "exitDownSection", enter: "enterUpSection" },
+  "#skills->#contact": { exit: "exitUpSection", enter: "enterDownSection" },
+
+  "#contact->#about": { exit: "exitDownSection", enter: "enterUpSection" },
+  "#contact->#projects": { exit: "exitDownSection", enter: "enterUpSection" },
+  "#contact->#skills": { exit: "exitDownSection", enter: "enterUpSection" },
+
+  "#about->#home": { exit: "exitRightSection", enter: "enterLeftSection" },
+  "#projects->#home": { exit: "exitRightSection", enter: "enterLeftSection" },
+  "#skills->#home": { exit: "exitRightSection", enter: "enterLeftSection" },
+  "#contact->#home": { exit: "exitRightSection", enter: "enterLeftSection" },
+};
