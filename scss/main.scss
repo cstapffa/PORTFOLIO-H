@@ -1,60 +1,95 @@
+@import "vars";
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-$rainbow-gradient: linear-gradient(
-  90deg,
-  #ffc100 0%,
-  #ffbb00 12.2891%,
-  #ffaa00 24%,
-  #ff9000 40%,
-  #fe850e 45%,
-  #fe6835 54%,
-  #fe3a73 67%,
-  #fe3081 70%,
-  #ee2b94 79%,
-  #c520c7 98%,
-  #c11fcd 100%
-);
-html,
-body {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
   height: 100%;
   overflow: hidden;
-  background-color: #f5f5f5;
+  background-color: #fafafa;
+}
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.content {
+  margin: 3rem auto;
+}
+
+img {
+  width: 100%;
 }
 
 section {
   height: 100vh;
 }
 
-/* article {
-  background-color: rgba(255, 255, 255, 0.8);
+h2 {
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+}
+
+p {
+  font-size: 0.9rem;
+}
+
+/* #about,
+#projects,
+#skills,
+#contact {
+  background-color: #fafafa;
 } */
+// ---------------- HOME ----------------
 
 #home {
   position: relative;
-  h1 {
-    font-size: 1.5rem;
-    font-weight: regular;
-  }
+  background-image: url(https://res.cloudinary.com/dpushmfs0/image/upload/v1747269293/bg-hero_pcfgss.jpg);
+  background-size: cover;
+  background-position: center;
+  article {
+    height: 100vh;
 
-  .big-signature {
-    width: 16rem;
-  }
-
-  .btn-home {
-    border: none;
-    background-color: white;
-    padding: 1rem;
-    margin: 0.5rem;
-    box-shadow: 0px 9px 27px 0px rgba(0, 0, 0, 0.05),
-      0px 2.01px 6.031px 0px rgba(0, 0, 0, 0.03),
-      0px 0.599px 1.796px 0px rgba(0, 0, 0, 0.02);
-    img {
-      width: 1.5rem;
+    p {
+      font-size: 1.3rem;
+      font-weight: normal;
     }
-    &:hover {
-      background-color: #000;
+
+    .big-signature {
+      width: 16rem;
+    }
+
+    .btn-home {
+      border: none;
+      background-color: white;
+      padding: 1rem;
+      margin: 0.5rem;
+      box-shadow: 0px 9px 27px rgba(0, 0, 0, 0.05),
+        0px 2.01px 6.031px rgba(0, 0, 0, 0.03),
+        0px 0.599px 1.796px rgba(0, 0, 0, 0.02);
+
+      img {
+        width: 1.5rem;
+      }
+
+      &:hover {
+        background-color: #000;
+      }
+
+      .gif {
+        width: 50%;
+        height: 100vh;
+
+        #eyes-gif {
+          transition: opacity 0.5s ease-in-out;
+        }
+      }
     }
   }
 
@@ -66,11 +101,12 @@ section {
     height: 20rem;
     display: flex;
     flex-direction: column;
-    a {
-      img {
-        width: 5rem;
-      }
+
+    a img {
+      width: 5rem;
+      cursor: pointer;
     }
+
     #rrss-home-line {
       width: 1.5px;
       height: 5rem;
@@ -81,44 +117,176 @@ section {
   }
 }
 
-.content {
-  padding: 5rem 0;
-}
-.side-menu {
-  li {
-    display: flex;
-    align-items: baseline;
-    margin: 0.5rem;
-    list-style: none;
-    font-size: 0.9rem;
+// ---------------- SIDE MENU ----------------
 
+.side-menu {
+  padding: 0;
+  height: 70vh;
+  .side-menu-logo {
+    width: 40%;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+  div {
+    height: 100%;
+
+    ul {
+      padding: 0;
+
+      li {
+        display: flex;
+        align-items: baseline;
+        margin: 0.5rem 0;
+        list-style: none;
+        font-size: 0.9rem;
+
+        img {
+          width: 1rem;
+          margin-right: 1rem;
+        }
+
+        span {
+          position: relative;
+          z-index: 1;
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            height: 3px;
+            transform: scaleX(0);
+            transform-origin: left;
+            background: $rainbow-gradient;
+            transition: transform 0.3s ease-in-out;
+            z-index: -1;
+          }
+        }
+
+        &.active span::after,
+        &:hover span::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+}
+
+// ---------------- ABOUT ----------------
+
+#about {
+  article {
+    margin: 0;
+    padding:0;
+    width: 60%;
+  }
+  .me-myself-i {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     img {
-      width: 1rem;
-      margin-right: 1rem;
+      width: 70%;
+    }
+    h3 {
+      text-align: center;
+      font-size: 1rem;
+      margin: 1rem 0;
+    }
+    button {
+      background: $black;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0;
+      font-size: 0.8rem;
+
+      &:hover {
+        background: $orange;
+        box-shadow: 0px 9px 27px rgba(0, 0, 0, 0.05),
+          0px 2.01px 6.031px rgba(0, 0, 0, 0.03),
+          0px 0.599px 1.796px rgba(0, 0, 0, 0.02);
+      }
+    }
+  }
+}
+
+// ---------------- CONTACT FORM ----------------
+
+.contact-content {
+  display: flex;
+  gap: 1rem;
+
+  div {
+    width: 50%;
+  }
+
+  form {
+    width: 50%;
+    background: $rainbow-gradient;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.3rem;
+    box-shadow: 0px 9px 27px rgba(0, 0, 0, 0.05),
+      0px 2.01px 6.031px rgba(0, 0, 0, 0.03),
+      0px 0.599px 1.796px rgba(0, 0, 0, 0.02);
+
+    fieldset {
+      gap: 1rem;
     }
 
-    span {
-      position: relative;
-      z-index: 1;
+    input,
+    textarea {
+      width: 100%;
+      height: 2.3rem;
+      font-size: 0.9rem;
+      border: none;
+      border-bottom: 1px solid white;
+      resize: none;
+      background: transparent;
+      color: $black;
+      transition: 0.3s ease, height 0.3s ease;
+    }
 
-      &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        height: 3px;
-        top: 50%;
-        transform: scaleX(0);
-        transform-origin: left;
-        background: $rainbow-gradient;
-        transition: transform 0.3s ease-in-out;
-        z-index: -1;
+    input::placeholder,
+    textarea::placeholder {
+      color: white;
+    }
+
+    input:focus {
+      background: white;
+      border-radius: 0;
+    }
+
+    textarea {
+      &.has-content,
+      &:focus {
+        height: 8rem;
+        background: white;
+        border-radius: 0;
       }
     }
 
-    &.active span::after,
-    &:hover span::after {
-      transform: scaleX(1);
+    button {
+      background: $black;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0;
+      font-size: 0.8rem;
+
+      &:hover {
+        background: $violet;
+        color: white;
+        box-shadow: 0px 9px 27px rgba(0, 0, 0, 0.05),
+          0px 2.01px 6.031px rgba(0, 0, 0, 0.03),
+          0px 0.599px 1.796px rgba(0, 0, 0, 0.02);
+      }
     }
   }
 }

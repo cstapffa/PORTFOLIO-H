@@ -47,6 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // === DYNAMIC SIDE MENU ===
   const sideMenus = document.querySelectorAll(".side-menu");
   const menuHTML = `
+  <img class="side-menu-logo" src="https://res.cloudinary.com/dpushmfs0/image/upload/v1747270191/mirada-2_u4baus.png" alt="Mila" title="Mila">
+  <div class="d-flex flex-column justify-content-between">
     <ul>
       <li class="side-btn side-btn-about">
         <img src="https://res.cloudinary.com/dpushmfs0/image/upload/v1746408186/abuout_k6zypz.png" alt="icon" />
@@ -63,12 +65,16 @@ document.addEventListener("DOMContentLoaded", () => {
       <li class="side-btn side-btn-contact">
         <img src="https://res.cloudinary.com/dpushmfs0/image/upload/v1746418058/contact_ilrvxl.png" alt="icon" />
         <span>Contact</span>
-      </li><li></li><li></li>
+      </li>
+      </ul>
+
+      <ul>
       <li class="side-btn side-btn-back">
         <img src="https://res.cloudinary.com/dpushmfs0/image/upload/v1746408186/back_maml1x.png" alt="icon" />
         <span>Back</span>
       </li>
     </ul>
+  </div>
   `;
 
   sideMenus.forEach((menu) => {
@@ -193,3 +199,36 @@ const transitionMap = {
   "#skills->#home": { exit: "exitRightSection", enter: "enterLeftSection" },
   "#contact->#home": { exit: "exitRightSection", enter: "enterLeftSection" },
 };
+
+const milaImg = document.getElementById("eyes-gif");
+
+const originalSrc =
+  "https://res.cloudinary.com/dpushmfs0/image/upload/v1747252111/perfil_oa0tj2.png";
+const alternateSrc =
+  "https://res.cloudinary.com/dpushmfs0/image/upload/v1747348199/perfil-ceja_hiqny3.png";
+
+function toggleMilaImage() {
+  milaImg.src = alternateSrc;
+
+  setTimeout(() => {
+    milaImg.src = originalSrc;
+  }, 2000);
+}
+
+setInterval(toggleMilaImage, 4000);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const textarea = document.querySelector("textarea");
+
+  const checkContent = () => {
+    if (textarea.value.trim() !== "") {
+      textarea.classList.add("has-content");
+    } else {
+      textarea.classList.remove("has-content");
+    }
+  };
+
+  // Detecta si hay contenido cuando el usuario escribe o al salir del campo
+  textarea.addEventListener("input", checkContent);
+  textarea.addEventListener("blur", checkContent);
+});

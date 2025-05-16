@@ -1,0 +1,24 @@
+/* Variables */
+@import url("https://fonts.googleapis.com/css2?family=Comme:wght@100..900&display=swap");
+
+$white: #fff;
+$black: #1f1f1f;
+$orange: #ff9000;
+$violet: #4d0c52;
+$rainbow-gradient: linear-gradient(
+  90deg,
+  #ffc100 0%,
+  #ffbb00 12.2891%,
+  #ffaa00 24%,
+  #ff9000 40%,
+  #fe850e 45%,
+  #fe6835 54%,
+  #fe3a73 67%,
+  #fe3081 70%,
+  #ee2b94 79%,
+  #c520c7 98%,
+  #c11fcd 100%
+);
+
+$font-family-base: "Comme", sans-serif;
+$heading-font: "Comme", sans-serif;

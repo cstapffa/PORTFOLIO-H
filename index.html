@@ -8,8 +8,16 @@
     <!-- Favicon -->
     <link
       rel="icon"
-      href="https://res.cloudinary.com/dpushmfs0/image/upload/v1746552785/favicon_hx1be4.png"
+      href="https://res.cloudinary.com/dpushmfs0/image/upload/v1747168046/favicon_snbcni.png"
       type="image/png"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comme:wght@100..900&display=swap"
+      rel="stylesheet"
     />
 
     <!-- CSS -->
@@ -17,64 +25,72 @@
   </head>
 
   <body>
-    <main class="container">
-      <section
-        id="home"
-        class="visible row align-items-center justify-content-center"
-      >
-        <div
-          class="col-12 text-center col-md-6 text-md-end align-content-around order-md-last"
-        >
-          <img
-            class="big-signature"
-            src="https://res.cloudinary.com/dpushmfs0/image/upload/v1746410676/signature_giwdz1.png"
-            alt="Camila Stapff"
-            title="Camila Stapff"
-          />
-          <h1 class="d-none d-md-block">
-            <b>Design isn’t just what I do</b> — it’s<br />
-            how I bring <b>wild ideas to life<br /></b> across
-            <b
-              >screens, stories, and<br />
-              brands</b
-            >.
-          </h1>
-          <div class="d-none d-md-block">
-            <button class="btn btn-home" id="about-btn">
+    <main>
+      <section id="home" class="visible">
+        <div class="container row justify-content-between">
+          <article
+            class="col-12 text-center col-md-6 text-md-end order-md-last align-content-center"
+          >
+            <h1>
               <img
-                src="https://res.cloudinary.com/dpushmfs0/image/upload/v1746408186/about-fill-grey_vzkt2l.png"
-                alt="About Me"
-                title="About Me"
+                class="big-signature"
+                src="https://res.cloudinary.com/dpushmfs0/image/upload/v1746410676/signature_giwdz1.png"
+                alt="signature"
+                title="Mila Stapff"
               />
-            </button>
-            <button class="btn btn-home" id="projects-btn">
-              <img
-                src="https://res.cloudinary.com/dpushmfs0/image/upload/v1746411791/projects-fill-grey_e7bqd2.png"
-                alt="Projects"
-                title="Projects"
-              />
-            </button>
-          </div>
-          <div class="d-none d-md-block">
-            <button class="btn btn-home" id="skills-btn">
-              <img
-                src="https://res.cloudinary.com/dpushmfs0/image/upload/v1746408185/skills-fill-grey_nt3o59.png"
-                alt="My Skills"
-                title="My Skills"
-              />
-            </button>
-            <button class="btn btn-home" id="contact-btn">
-              <img
-                src="https://res.cloudinary.com/dpushmfs0/image/upload/v1746411790/contact-fill-grey_dl861o.png"
-                alt="Contact"
-                title="Contact"
-              />
-            </button>
-          </div>
-        </div>
+            </h1>
+            <p class="d-none d-md-block">
+              <b>Design isn’t just what I do</b> — it’s<br />
+              how I bring <b>wild ideas to life<br /></b> across
+              <b
+                >screens, stories, and<br />
+                brands</b
+              >.
+            </p>
+            <div class="d-none d-md-block">
+              <button class="btn btn-home" id="about-btn">
+                <img
+                  src="https://res.cloudinary.com/dpushmfs0/image/upload/v1746408186/about-fill-grey_vzkt2l.png"
+                  alt="About Me"
+                  title="About Me"
+                />
+              </button>
+              <button class="btn btn-home" id="projects-btn">
+                <img
+                  src="https://res.cloudinary.com/dpushmfs0/image/upload/v1746411791/projects-fill-grey_e7bqd2.png"
+                  alt="Projects"
+                  title="Projects"
+                />
+              </button>
+            </div>
+            <div class="d-none d-md-block">
+              <button class="btn btn-home" id="skills-btn">
+                <img
+                  src="https://res.cloudinary.com/dpushmfs0/image/upload/v1746408185/skills-fill-grey_nt3o59.png"
+                  alt="My Skills"
+                  title="My Skills"
+                />
+              </button>
+              <button class="btn btn-home" id="contact-btn">
+                <img
+                  src="https://res.cloudinary.com/dpushmfs0/image/upload/v1746411790/contact-fill-grey_dl861o.png"
+                  alt="Contact"
+                  title="Contact"
+                />
+              </button>
+            </div>
+          </article>
 
-        <div class="col-12 col-md-6 order-md-first text-center">
-          <img src="" alt="Mila" title="k100a" />
+          <article
+            class="col-12 col-md-6 order-md-first text-center gif align-content-end"
+          >
+            <img
+              id="eyes-gif"
+              src="https://res.cloudinary.com/dpushmfs0/image/upload/v1747252111/perfil_oa0tj2.png"
+              alt="k1000a"
+              title="Mila"
+            />
+          </article>
         </div>
 
         <div id="rrss-home" class="d-none d-md-block">
@@ -103,60 +119,169 @@
         </div>
       </section>
 
-      <section id="about" class="hidden row content">
-        <div class="side-menu d-none d-md-block col-lg-3"></div>
+      <section id="about" class="hidden row">
+        <div class="container row content">
+          <div class="side-menu d-none d-md-block col-md-3"></div>
 
-        <article id="about-content" class="col-lg-9">
-          <div>
-            <p>
-              Hi, I’m Camila Stapff (but you can call me Mila). I’m a passionate
-              and creative digital designer based in Uruguay. With a background
-              in web design, graphic design, and a deep love for photography, I
-              bring a unique blend of technical expertise and artistic flair to
-              everything I create.
-            </p>
-            <p>
-              My journey into design started at a young age, where I spent
-              countless hours experimenting with analog photography and
-              exploring different artistic styles. Over the years, I’ve
-              developed a strong appreciation for blending traditional
-              techniques with modern, digital design, especially through the
-              power of color, shapes, and dynamic compositions.
-            </p>
-            <p>
-              I specialize in creating visually engaging, user-centered designs
-              for websites, brands, and digital experiences. Whether it’s a
-              clean and simple website layout, a striking logo, or a cohesive
-              brand identity, I aim to create designs that are not only
-              beautiful but also functional and impactful.
-            </p>
-            <p>
-              I believe design is about more than just making things look
-              good—it’s about telling a story and connecting with people on a
-              deeper level. And that’s what I strive to do with every project I
-              take on. If you’re looking for a designer who brings creativity,
-              passion, and a tech-savvy approach, I’d love to collaborate with
-              you. Let’s bring your ideas to life!
-            </p>
+          <div id="about-content" class="col-md-9">
+            <h2>About Me</h2>
+            <div class="d-flex">
+              <article class="me-myself-i">
+                <img
+                  src="https://res.cloudinary.com/dpushmfs0/image/upload/v1747356769/img_kwtsb6.png"
+                  alt="Mila Stapff"
+                  title="Mila Stapff"
+                />
+                <h3>
+                  <em><strong>Digital Designer</strong></em> based in
+                  <em><strong>Uruguay</strong></em>
+                </h3>
+                <button>Download CV</button>
+              </article>
+              <article>
+                <p>
+                  Hi, I’m Camila Stapff (but you can call me Mila). I’m a
+                  digital designer who believes that design is more than just
+                  making things look good. For me, it’s about connecting people,
+                  crafting experiences that feel intuitive, and communicating
+                  ideas with honesty and detail.
+                </p>
+                <p>
+                  My path into design wasn’t linear, it grew out of curiosity, a
+                  love for visual expression, and a desire to bring order to
+                  creative chaos. I come from a tech-rooted family but found my
+                  place where code meets color, structure meets play, and
+                  emotion meets function.
+                </p>
+                <p>
+                  I care about coherence, I enjoy the tension between utility
+                  and ornament, and I believe that every project carries the
+                  chance to say something, or make someone feel something.
+                </p>
+                <p>
+                  This space is a reflection of who I am, what I do, and how I
+                  think. Hope you find something that speaks to you.
+                </p>
+              </article>
+            </div>
           </div>
-        </article>
+        </div>
       </section>
 
-      <section id="projects" class="hidden row content">
-        <div class="side-menu d-none d-md-block col-lg-3"></div>
+      <section id="projects" class="hidden">
+        <div class="container row content">
+          <div class="side-menu d-none d-md-block col-lg-3"></div>
 
-        <article id="projects-content" class="col-lg-9"></article>
+          <article id="projects-content" class="col-lg-9">
+            <h2>Projects</h2>
+            <p>
+              Peek into my digital playground, a mix of curious experiments,
+              real world builds, and stories told in pixels. Every project has a
+              pulse, a purpose, and a piece of me in it. Scroll, explore, get
+              inspired.
+            </p>
+
+            <div class="row">
+              <div class="card">
+                <img src="" alt="" />
+                <h3>Project</h3>
+                <div class="d-flex justify-content-between">
+                  <p class="description">Branding</p>
+                  <a href="#project-ampli"
+                    ><img src="" alt="go to project"
+                  /></a>
+                </div>
+              </div>
+              <div class="card">
+                <img src="" alt="" />
+                <h3>Project</h3>
+                <div class="d-flex justify-content-between">
+                  <p class="description">Branding</p>
+                  <a href="#project-ampli"
+                    ><img src="" alt="go to project"
+                  /></a>
+                </div>
+              </div>
+              <div class="card">
+                <img src="" alt="" />
+                <h3>Project</h3>
+                <div class="d-flex justify-content-between">
+                  <p class="description">Branding</p>
+                  <a href="#project-ampli"
+                    ><img src="" alt="go to project"
+                  /></a>
+                </div>
+              </div>
+              <div class="card">
+                <img src="" alt="" />
+                <h3>Project</h3>
+                <div class="d-flex justify-content-between">
+                  <p class="description">Branding</p>
+                  <a href="#project-ampli"
+                    ><img src="" alt="go to project"
+                  /></a>
+                </div>
+              </div>
+              <div class="card">
+                <img src="" alt="" />
+                <h3>Project</h3>
+                <div class="d-flex justify-content-between">
+                  <p class="description">Branding</p>
+                  <a href="#project-ampli"
+                    ><img src="" alt="go to project"
+                  /></a>
+                </div>
+              </div>
+              <div class="card">
+                <img src="" alt="" />
+                <h3>Project</h3>
+                <div class="d-flex justify-content-between">
+                  <p class="description">Branding</p>
+                  <a href="#project-ampli"
+                    ><img src="" alt="go to project"
+                  /></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
       </section>
 
-      <section id="skills" class="hidden row content">
-        <div class="side-menu d-none d-md-block col-lg-3"></div>
-        <article id="skills-content" class="col-lg-9"></article>
+      <section id="skills" class="hidden">
+        <div class="container row content">
+          <div class="side-menu d-none d-md-block col-lg-3"></div>
+          <article id="skills-content" class="col-lg-9"></article>
+        </div>
       </section>
 
-      <section id="contact" class="hidden row content">
-        <div class="side-menu d-none d-md-block col-lg-3"></div>
+      <section id="contact" class="hidden">
+        <div class="container row content">
+          <div class="side-menu d-none d-md-block col-lg-3"></div>
 
-        <article id="contact-content" class="col-lg-9"></article>
+          <article class="col-lg-9">
+            <h2>Slide into my Inbox</h2>
+            <div class="justify-content-between d-flex contact-content">
+              <div>
+                <p>
+                  Have a question or a project in mind? I'd love to hear from
+                  you. Let's chat and make something amazing together.
+                </p>
+              </div>
+              <form action="">
+                <fieldset class="d-flex justify-content-between">
+                  <input
+                    type="text"
+                    placeholder="NAME"
+                    class="align-content-center"
+                  />
+                  <input type="email" placeholder="E-MAIL" />
+                </fieldset>
+                <textarea placeholder="MESSAGE"></textarea>
+                <button class="btn">Send Message</button>
+              </form>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
 
