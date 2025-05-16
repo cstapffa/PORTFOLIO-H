@@ -75,19 +75,19 @@ p {
 
     .btn-home {
       border: none;
+      border-radius: 0.4rem;
       background-color: white;
       padding: 1rem;
       margin: 0.5rem;
-      box-shadow: 0px 9px 27px rgba(0, 0, 0, 0.05),
-        0px 2.01px 6.031px rgba(0, 0, 0, 0.03),
-        0px 0.599px 1.796px rgba(0, 0, 0, 0.02);
+      box-shadow: $shadow-hover;
 
       img {
         width: 1.5rem;
       }
 
       &:hover {
-        background-color: #000;
+        background: $rainbow-gradient-angular;
+        box-shadow: $shadow-hover;
       }
 
       .gif {
@@ -109,6 +109,8 @@ p {
     height: 20rem;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     a img {
       width: 5rem;
@@ -129,7 +131,7 @@ p {
 
 .side-menu {
   padding: 0;
-  height: 80vh;
+  height: 78vh;
   .side-menu-logo {
     width: 40%;
     height: auto;
@@ -185,8 +187,6 @@ p {
 
 #about {
   article {
-    margin: 0;
-    padding: 0;
     width: 60%;
   }
   .me-myself-i {
@@ -208,14 +208,12 @@ p {
       color: white;
       border: none;
       padding: 0.5rem 1rem;
-      border-radius: 0;
+      border-radius: 0.4rem;
       font-size: 0.8rem;
 
       &:hover {
         background: $orange;
-        box-shadow: 0px 9px 27px rgba(0, 0, 0, 0.05),
-          0px 2.01px 6.031px rgba(0, 0, 0, 0.03),
-          0px 0.599px 1.796px rgba(0, 0, 0, 0.02);
+        box-shadow: $shadow-hover;
       }
     }
   }
@@ -230,19 +228,20 @@ p {
   flex-direction: column;
   align-items: flex-start;
 
+  margin-bottom: 0.3rem;
   border-radius: 0;
   border: none;
   width: 32%;
   height: auto;
-  img {
-    filter: grayscale(100%);
-    transition: filter 0.4s ease;
-    &:hover {
-      filter: grayscale(0%);
-    }
-  }
+  filter: grayscale(100%);
+  transform: scale(1);
+  transition: filter 0.4s ease, transform 0.4s ease;
+
+  box-shadow: $shadow-soft;
+
   h3 {
     font-size: 1rem;
+    margin: 0.3rem 0 0;
   }
   p {
     font-size: 0.7rem;
@@ -250,11 +249,11 @@ p {
     padding: 0;
     margin: 0;
   }
-  &:hover {
-    box-shadow: 0px 9px 27px rgba(0, 0, 0, 0.05),
-      0px 2.01px 6.031px rgba(0, 0, 0, 0.03),
-      0px 0.599px 1.796px rgba(0, 0, 0, 0.02);
-  }
+}
+.card:hover {
+  filter: grayscale(0%);
+  transform: scale(1.01); /* apenas más grande */
+  box-shadow: $shadow-hover;
 }
 
 // ---------------- SKILLS ----------------
@@ -271,6 +270,50 @@ p {
       font-weight: 600;
     }
   }
+
+  .linkedin-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: white;
+    border-radius: 1.25rem;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+    }
+
+    .linkedin-avatar img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .linkedin-info {
+      h3 {
+        margin: 0;
+        font-size: 1.25rem;
+      }
+
+      p {
+        margin: 0.25rem 0;
+        color: #555;
+      }
+
+      span {
+        font-size: 0.875rem;
+        color: #0a66c2;
+        font-weight: 500;
+      }
+    }
+  }
+
   #rrss-contact {
     margin-top: 3rem;
     a img {
@@ -282,6 +325,7 @@ p {
 
   form {
     width: 50%;
+    height: 100%;
     background: $rainbow-gradient;
     padding: 2rem;
     display: flex;
@@ -289,15 +333,14 @@ p {
     justify-content: space-between;
     align-items: flex-start;
     gap: 1.5rem;
-    box-shadow: 0px 9px 27px rgba(0, 0, 0, 0.05),
-      0px 2.01px 6.031px rgba(0, 0, 0, 0.03),
-      0px 0.599px 1.796px rgba(0, 0, 0, 0.02);
+    box-shadow: $shadow-soft;
 
     fieldset {
       gap: 1rem;
     }
 
     input,
+    select,
     textarea {
       width: 100%;
       height: 2.3rem;
@@ -308,6 +351,13 @@ p {
       background: transparent;
       color: $black;
       transition: 0.3s ease, height 0.3s ease;
+    }
+
+    select {
+      color: white;
+      option {
+        color: $black;
+      }
     }
 
     input::placeholder,
@@ -334,15 +384,13 @@ p {
       color: white;
       border: none;
       padding: 0.5rem 1rem;
-      border-radius: 0;
+      border-radius: 0.4rem;
       font-size: 0.8rem;
 
       &:hover {
-        background: $violet;
+        background: $orange;
         color: white;
-        box-shadow: 0px 9px 27px rgba(0, 0, 0, 0.05),
-          0px 2.01px 6.031px rgba(0, 0, 0, 0.03),
-          0px 0.599px 1.796px rgba(0, 0, 0, 0.02);
+        box-shadow: $shadow-hover;
       }
     }
   }
@@ -468,3 +516,16 @@ p {
     opacity: 0;
   }
 }
+@media screen and (max-width: 768px) {
+  
+  #home {
+    .container{
+      width: 95%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+    }
+  }
+

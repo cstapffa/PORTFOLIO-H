@@ -6,7 +6,6 @@ $black: #1f1f1f;
 $orange: #ff9000;
 $violet: #4d0c52;
 $rainbow-gradient: linear-gradient(
-  90deg,
   #ffc100 0%,
   #ffbb00 12.2891%,
   #ffaa00 24%,
@@ -19,6 +18,15 @@ $rainbow-gradient: linear-gradient(
   #c520c7 98%,
   #c11fcd 100%
 );
+$rainbow-gradient-angular: linear-gradient(
+  51.02deg,
+  #ee2b94 14.92%,
+  #fe850e 49.99%,
+  #ffc100 85.05%
+);
 
 $font-family-base: "Comme", sans-serif;
 $heading-font: "Comme", sans-serif;
+
+$shadow-soft: 0px 1px 3px rgba(0, 0, 0, 0.015);
+$shadow-hover: 0px 4px 12px rgba(0, 0, 0, 0.05);
