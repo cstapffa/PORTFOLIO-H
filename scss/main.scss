@@ -271,49 +271,6 @@ p {
     }
   }
 
-  .linkedin-card {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background: white;
-    border-radius: 1.25rem;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
-    padding: 1.5rem;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-    &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
-    }
-
-    .linkedin-avatar img {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .linkedin-info {
-      h3 {
-        margin: 0;
-        font-size: 1.25rem;
-      }
-
-      p {
-        margin: 0.25rem 0;
-        color: #555;
-      }
-
-      span {
-        font-size: 0.875rem;
-        color: #0a66c2;
-        font-weight: 500;
-      }
-    }
-  }
-
   #rrss-contact {
     margin-top: 3rem;
     a img {
@@ -384,7 +341,7 @@ p {
       color: white;
       border: none;
       padding: 0.5rem 1rem;
-      border-radius: 0.4rem;
+      border-radius: 0;
       font-size: 0.8rem;
 
       &:hover {
@@ -517,15 +474,124 @@ p {
   }
 }
 @media screen and (max-width: 768px) {
-  
+  html,
+  body {
+    height: auto;
+    overflow-y: auto;
+  }
+  section {
+    height: auto;
+  }
+
+  .container {
+    width: 95%;
+    height: auto;
+    border-bottom: 1px solid;
+    border-image: $rainbow-gradient-angular;
+    border-image-slice: 1;
+    padding: 0;
+  }
+  h2 {
+    text-align: center;
+  }
+  .subtitle {
+    text-align: center;
+  }
   #home {
-    .container{
-      width: 95%;
+    height: 100dvh;
+    .container {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
-    }
+      position: relative;
+      border: none;
+
+      article {
+        height: auto;
+        position: relative;
+
+        .gif {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+        }
+      }
+
+      .big-signature {
+        margin-top: 3rem;
+        width: 75%;
+      }
     }
   }
 
+  #about {
+    .container {
+      padding: 3rem 0;
+      #about-content {
+        padding: 0;
+        div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          article {
+            width: 95%;
+            img {
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #projects {
+    .container {
+      padding-bottom: 3rem;
+      .card {
+        width: 49%;
+        margin-bottom: 1.5rem;
+        filter: none;
+      }
+    }
+  }
+
+  #skills {
+    .container {
+      padding-bottom: 3rem;
+    }
+  }
+
+  #contact {
+    .container {
+      padding-bottom: 3rem;
+      .contact-content {
+        flex-direction: column;
+        align-items: center;
+        div {
+          width: 100%;
+        }
+        form {
+          width: 100%;
+          fieldset {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    nav {
+      margin-bottom: 3rem;
+      a {
+        text-decoration: none;
+        color: $black;
+      }
+      img {
+        width: 5rem;
+        height: auto;
+      }
+    }
+  }
+}

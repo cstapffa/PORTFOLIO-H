@@ -236,24 +236,32 @@ document.addEventListener("DOMContentLoaded", () => {
 const hoverImages = [
   {
     id: "about-btn",
-    defaultSrc: "https://res.cloudinary.com/dpushmfs0/image/upload/v1746408186/about-fill-grey_vzkt2l.png",
-    hoverSrc: "https://res.cloudinary.com/dpushmfs0/image/upload/v1747409303/Vector_orjfxq.png"
+    defaultSrc:
+      "https://res.cloudinary.com/dpushmfs0/image/upload/v1746408186/about-fill-grey_vzkt2l.png",
+    hoverSrc:
+      "https://res.cloudinary.com/dpushmfs0/image/upload/v1747409303/Vector_orjfxq.png",
   },
   {
     id: "projects-btn",
-    defaultSrc: "https://res.cloudinary.com/dpushmfs0/image/upload/v1746411791/projects-fill-grey_e7bqd2.png",
-    hoverSrc: "https://res.cloudinary.com/dpushmfs0/image/upload/v1747409538/Frame_47552_h85bgz.png"
+    defaultSrc:
+      "https://res.cloudinary.com/dpushmfs0/image/upload/v1746411791/projects-fill-grey_e7bqd2.png",
+    hoverSrc:
+      "https://res.cloudinary.com/dpushmfs0/image/upload/v1747409538/Frame_47552_h85bgz.png",
   },
   {
     id: "skills-btn",
-    defaultSrc: "https://res.cloudinary.com/dpushmfs0/image/upload/v1746408185/skills-fill-grey_nt3o59.png",
-    hoverSrc: "https://res.cloudinary.com/dpushmfs0/image/upload/v1747409303/Vector-3_xq8s61.png"
+    defaultSrc:
+      "https://res.cloudinary.com/dpushmfs0/image/upload/v1746408185/skills-fill-grey_nt3o59.png",
+    hoverSrc:
+      "https://res.cloudinary.com/dpushmfs0/image/upload/v1747409303/Vector-3_xq8s61.png",
   },
   {
     id: "contact-btn",
-    defaultSrc: "https://res.cloudinary.com/dpushmfs0/image/upload/v1746411790/contact-fill-grey_dl861o.png",
-    hoverSrc: "https://res.cloudinary.com/dpushmfs0/image/upload/v1747409539/Frame_47553_gwhlad.png"
-  }
+    defaultSrc:
+      "https://res.cloudinary.com/dpushmfs0/image/upload/v1746411790/contact-fill-grey_dl861o.png",
+    hoverSrc:
+      "https://res.cloudinary.com/dpushmfs0/image/upload/v1747409539/Frame_47553_gwhlad.png",
+  },
 ];
 
 hoverImages.forEach(({ id, defaultSrc, hoverSrc }) => {
@@ -267,4 +275,35 @@ hoverImages.forEach(({ id, defaultSrc, hoverSrc }) => {
   button.addEventListener("mouseleave", () => {
     img.src = defaultSrc;
   });
+});
+
+// MOBILE
+document.addEventListener("DOMContentLoaded", () => {
+  const isMobile = window.innerWidth <= 768;
+
+  if (isMobile) {
+    // Mostrar todas las secciones en mobile
+    show("#home");
+    show("#about");
+    show("#projects");
+    show("#skills");
+    show("#contact");
+
+    // O directamente podés eliminar animaciones si no querés transiciones en mobile
+    document.querySelectorAll("section").forEach((section) => {
+      section.classList.remove("hidden");
+      section.classList.add("visible");
+      section.style.display = "block";
+    });
+  } else {
+    // Desktop: solo mostrar home y ocultar el resto
+    show("#home");
+    hide("#about");
+    hide("#projects");
+    hide("#skills");
+    hide("#contact");
+  }
+
+  // Resto de la inicialización...
+  // ...
 });
