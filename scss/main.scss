@@ -308,6 +308,7 @@ p {
       background: transparent;
       color: $black;
       transition: 0.3s ease, height 0.3s ease;
+      border-radius: 0;
     }
 
     select {
@@ -473,6 +474,8 @@ p {
     opacity: 0;
   }
 }
+
+/* MEDIA QUERIES ----------------------------------------------------------------------------------------- */
 @media screen and (max-width: 768px) {
   html,
   body {
@@ -482,14 +485,20 @@ p {
   section {
     height: auto;
   }
+  p {
+    font-size: 1rem;
+  }
+  .subtitle {
+    font-size: 0.9rem;
+  }
 
   .container {
     width: 95%;
     height: auto;
-    border-bottom: 1px solid;
+    /* border-bottom: 1px solid;
     border-image: $rainbow-gradient-angular;
     border-image-slice: 1;
-    padding: 0;
+    padding: 0; */
   }
   h2 {
     text-align: center;
@@ -497,8 +506,9 @@ p {
   .subtitle {
     text-align: center;
   }
+
   #home {
-    height: 100dvh;
+    height: 100vh;
     .container {
       display: flex;
       flex-direction: column;
@@ -526,8 +536,10 @@ p {
   }
 
   #about {
+    /* text-align: center; */
     .container {
       padding: 3rem 0;
+      margin-top: 0;
       #about-content {
         padding: 0;
         div {
@@ -535,7 +547,7 @@ p {
           flex-direction: column;
           align-items: center;
           article {
-            width: 95%;
+            width: 90%;
             img {
               width: 50%;
             }
@@ -543,15 +555,51 @@ p {
         }
       }
     }
+    .about-heading {
+      color: white;
+      background-color: $black;
+      margin: 0;
+      padding: 2rem 0 1rem;
+    }
   }
 
-  #projects {
-    .container {
-      padding-bottom: 3rem;
+  #portfolio {
+    .portfolio-heading {
+      margin: 0;
+      background: $rainbow-gradient-angular;
+      color: white;
+      padding: 2rem 0 6rem;
+
+      z-index: 0;
+    }
+
+    .h-scroll-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 1rem;
+      padding: 1rem;
+      margin-top: -7rem;
+      z-index: 1;
+
+      -webkit-overflow-scrolling: touch;
+
       .card {
-        width: 49%;
-        margin-bottom: 1.5rem;
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        width: 100%;
+        margin: 1.5rem 0;
+        box-shadow: $shadow-hover;
         filter: none;
+
+        h3 {
+          font-size: 1.5rem;
+          margin: 0.5rem 0;
+        }
+        p {
+          font-size: 0.9rem;
+          margin-bottom: 0.5rem;
+        }
       }
     }
   }
@@ -573,6 +621,9 @@ p {
         }
         form {
           width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
           fieldset {
             width: 100%;
           }
@@ -582,8 +633,13 @@ p {
   }
 
   footer {
+    padding: 1.5rem 0 0;
+    z-index: 999;
+    box-shadow: $shadow-footer;
+    border-top: 1px solid;
+    border-image: $rainbow-gradient;
     nav {
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
       a {
         text-decoration: none;
         color: $black;
@@ -591,6 +647,16 @@ p {
       img {
         width: 5rem;
         height: auto;
+      }
+    }
+    #rrss-footer {
+      margin-bottom: 1rem;
+      a {
+        margin: 0.5rem;
+        img {
+          border-radius: 100%;
+          box-shadow: $shadow-soft;
+        }
       }
     }
   }
