@@ -120,13 +120,15 @@
       </section>
 
       <section id="about" class="hidden row">
+        <div class="about-heading d-md-none">
+          <h2>About Me</h2>
+        </div>
+
         <div class="container row content">
           <div class="side-menu d-none d-md-block col-md-3"></div>
 
           <div id="about-content" class="col-md-9">
-            <div class="about-heading">
-              <h2>About Me</h2>
-            </div>
+            <h2 class="d-none d-md-block">About Me</h2>
             <div class="d-flex">
               <article class="me-myself-i">
                 <img
@@ -170,11 +172,11 @@
         </div>
       </section>
 
-      <section id="projects" class="d-none d-md-block hidden">
+      <section id="projects" class="hidden">
         <div class="container row content">
           <div class="side-menu d-none d-md-block col-lg-3"></div>
 
-          <div id="projects-content" class="col-lg-9">
+          <div id="projects-content" class="d-none d-md-block col-lg-9">
             <h2>Selected Work</h2>
             <p class="subtitle">
               Peek into my digital playground, a mix of curious experiments,
@@ -191,8 +193,12 @@
                   title="EnKoncreto"
                 />
                 <h3>EnKoncreto</h3>
-
-                <p class="description">User Reaserch + Website</p>
+                <div class="d-flex justify-content-between">
+                  <p class="description">Branding + Website</p>
+                  <!-- <a href="#project-ampli"
+                    ><img src="" alt="go to project"
+                  /></a> -->
+                </div>
               </article>
               <article class="card">
                 <img
@@ -201,7 +207,97 @@
                   title="Culpadel"
                 />
                 <h3>Culpadel</h3>
+                <div class="d-flex justify-content-between">
+                  <p class="description">Branding + App</p>
+                  <!-- <a href="#project-ampli"
+                    ><img src="" alt="go to project"
+                  /></a> -->
+                </div>
+              </article>
+              <article class="card">
+                <img
+                  src="https://res.cloudinary.com/dpushmfs0/image/upload/v1747405797/project-Imagina_iidl4e.jpg"
+                  alt="pic"
+                  title="Imagina STUDIO"
+                />
+                <h3>Imagina</h3>
+                <div class="d-flex justify-content-between">
+                  <p class="description">Branding</p>
+                  <!-- <a href="#project-ampli"
+                    ><img src="" alt="go to project"
+                  /></a> -->
+                </div>
+              </article>
+              <article class="card">
+                <img
+                  src="https://res.cloudinary.com/dpushmfs0/image/upload/v1747405797/project-KAOS_gwp6pd.jpg"
+                  alt="pic"
+                  title="KAOS"
+                />
+                <h3>KAOS</h3>
+                <div class="d-flex justify-content-between">
+                  <p class="description">Branding</p>
+                  <!-- <a href="#project-ampli"
+                    ><img src="" alt="go to project"
+                  /></a> -->
+                </div>
+              </article>
+              <article class="card">
+                <img
+                  src="https://res.cloudinary.com/dpushmfs0/image/upload/v1747405797/project-LampArt_fzxscu.jpg"
+                  alt="pic"
+                  title="LampArt"
+                />
+                <h3>LampArt</h3>
+                <div class="d-flex justify-content-between">
+                  <p class="description">Branding + Website</p>
+                  <!-- <a href="#project-ampli"
+                    ><img src="" alt="go to project"
+                  /></a> -->
+                </div>
+              </article>
+              <article class="card">
+                <img src="" alt="pic" title="RottenTomatoes" />
+                <h3>RottenTomatoes</h3>
+                <div class="d-flex justify-content-between">
+                  <p class="description">Static Website</p>
+                  <!-- <a href="#project-ampli"
+                    ><img src="" alt="go to project"
+                  /></a> -->
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div id="portfolio" class="d-md-none">
+          <div id="portfolio-content" class="row content">
+            <div class="portfolio-heading">
+              <h2>My Portfolio</h2>
+              <p class="subtitle container">
+                Peek into my digital playground, a mix of curious experiments,
+                real world builds, and stories told in pixels. Every project has
+                a pulse, a purpose, and a piece of me in it. Scroll, explore,
+                get inspired.
+              </p>
+            </div>
 
+            <div class="h-scroll-container container">
+              <article class="card">
+                <img
+                  src="https://res.cloudinary.com/dpushmfs0/image/upload/v1747405797/project-enKoncreto_l2klt7.jpg"
+                  alt="pic"
+                  title="EnKoncreto"
+                />
+                <h3>EnKoncreto</h3>
+                <p class="description">User Research + Website</p>
+              </article>
+              <article class="card">
+                <img
+                  src="https://res.cloudinary.com/dpushmfs0/image/upload/v1747405797/project-CulPadel_yaqg4m.jpg"
+                  alt="pic"
+                  title="Culpadel"
+                />
+                <h3>Culpadel</h3>
                 <p class="description">Branding + App</p>
               </article>
               <article class="card">
@@ -211,7 +307,6 @@
                   title="Imagina STUDIO"
                 />
                 <h3>Imagina</h3>
-
                 <p class="description">Branding</p>
               </article>
               <article class="card">
@@ -221,7 +316,6 @@
                   title="KAOS"
                 />
                 <h3>KAOS</h3>
-
                 <p class="description">Branding</p>
               </article>
               <article class="card">
@@ -231,7 +325,6 @@
                   title="LampArt"
                 />
                 <h3>LampArt</h3>
-
                 <p class="description">Website Prototype</p>
               </article>
               <article class="card">
@@ -241,81 +334,9 @@
                   title="RottenTomatoes"
                 />
                 <h3>RottenTomatoes</h3>
-
                 <p class="description">Static Website</p>
               </article>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="portfolio" class="d-md-none">
-        <div id="portfolio-content" class="row content">
-          <div class="portfolio-heading">
-            <h2>My Portfolio</h2>
-            <p class="subtitle">
-              Peek into my digital playground, a mix of curious experiments,
-              real world builds, and stories told in pixels. Every project has a
-              pulse, a purpose, and a piece of me in it. Scroll, explore, get
-              inspired.
-            </p>
-          </div>
-
-          <div class="h-scroll-container container">
-            <article class="card">
-              <img
-                src="https://res.cloudinary.com/dpushmfs0/image/upload/v1747405797/project-enKoncreto_l2klt7.jpg"
-                alt="pic"
-                title="EnKoncreto"
-              />
-              <h3>EnKoncreto</h3>
-              <p class="description">User Research + Website</p>
-            </article>
-            <article class="card">
-              <img
-                src="https://res.cloudinary.com/dpushmfs0/image/upload/v1747405797/project-CulPadel_yaqg4m.jpg"
-                alt="pic"
-                title="Culpadel"
-              />
-              <h3>Culpadel</h3>
-              <p class="description">Branding + App</p>
-            </article>
-            <article class="card">
-              <img
-                src="https://res.cloudinary.com/dpushmfs0/image/upload/v1747405797/project-Imagina_iidl4e.jpg"
-                alt="pic"
-                title="Imagina STUDIO"
-              />
-              <h3>Imagina</h3>
-              <p class="description">Branding</p>
-            </article>
-            <article class="card">
-              <img
-                src="https://res.cloudinary.com/dpushmfs0/image/upload/v1747511364/project-KAOS_ai8bpi.jpg"
-                alt="pic"
-                title="KAOS"
-              />
-              <h3>KAOS</h3>
-              <p class="description">Branding</p>
-            </article>
-            <article class="card">
-              <img
-                src="https://res.cloudinary.com/dpushmfs0/image/upload/v1747511364/project-LampArt_qczhz8.jpg"
-                alt="pic"
-                title="LampArt"
-              />
-              <h3>LampArt</h3>
-              <p class="description">Website Prototype</p>
-            </article>
-            <article class="card">
-              <img
-                src="https://res.cloudinary.com/dpushmfs0/image/upload/v1747511364/project-RottenTomatoes_cnagq2.jpg"
-                alt="pic"
-                title="RottenTomatoes"
-              />
-              <h3>RottenTomatoes</h3>
-              <p class="description">Static Website</p>
-            </article>
           </div>
         </div>
       </section>
@@ -414,7 +435,7 @@
           </article>
         </div>
       </section>
-
+      
       <footer class="d-md-none">
         <nav class="d-flex justify-content-around">
           <a href="#about">About</a>
