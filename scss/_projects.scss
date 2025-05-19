@@ -1,0 +1,36 @@
+// ---------------- PROJECTS
+.card {
+  background: #ffffff;
+  padding: 0.3rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  margin-bottom: 0.3rem;
+  border-radius: 0;
+  border: none;
+  width: 32%;
+  height: auto;
+  filter: grayscale(100%);
+  transform: scale(1);
+  transition: filter 0.4s ease, transform 0.4s ease;
+
+  box-shadow: $shadow-soft;
+
+  h3 {
+    font-size: 1rem;
+    margin: 0.3rem 0 0;
+  }
+  p {
+    font-size: 0.7rem;
+    color: grey;
+    padding: 0;
+    margin: 0;
+  }
+}
+.card:hover {
+  filter: grayscale(0%);
+  transform: scale(1.03);
+  box-shadow: $shadow-hover;
+}

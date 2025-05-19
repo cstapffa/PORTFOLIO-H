@@ -1,0 +1,111 @@
+/* Gerenals */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  background-color: #fafafa;
+}
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.content {
+  margin: 3rem auto;
+}
+
+img {
+  width: 100%;
+}
+
+section {
+  height: 100vh;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+p {
+  font-size: 0.9rem;
+}
+.subtitle {
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+/* #about,
+#projects,
+#skills,
+#contact {
+  background-image: url(https://res.cloudinary.com/dpushmfs0/image/upload/v1746420295/bg_csz1sf.jpg);
+  background-size: cover;
+  background-position: top;
+} */
+
+// ---------------- SIDE MENU ----------------------------------------------------------------------------------------
+.side-menu {
+  padding: 0;
+  height: 78vh;
+  .side-menu-logo {
+    width: 40%;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+  div {
+    height: 100%;
+
+    ul {
+      padding: 0;
+
+      li {
+        display: flex;
+        align-items: baseline;
+        margin: 0.5rem 0;
+        list-style: none;
+        font-size: 0.9rem;
+        & :hover {
+          cursor: pointer;
+        }
+
+        img {
+          width: 1rem;
+          margin-right: 1rem;
+        }
+
+        span {
+          position: relative;
+          z-index: 1;
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 50%;
+            height: 3px;
+            transform: scaleX(0);
+            transform-origin: left;
+            background: $rainbow-gradient;
+            transition: transform 0.3s ease-in-out;
+            z-index: -1;
+          }
+        }
+
+        &.active span::after,
+        &:hover span::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+}

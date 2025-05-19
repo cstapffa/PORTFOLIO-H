@@ -1,0 +1,76 @@
+// ---------------- HOME
+#home {
+  position: relative;
+  background-image: url(https://res.cloudinary.com/dpushmfs0/image/upload/v1747269293/bg-hero_pcfgss.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  article {
+    height: 100vh;
+
+    p {
+      font-size: 1.3rem;
+      font-weight: normal;
+    }
+
+    .big-signature {
+      width: 16rem;
+    }
+
+    .btn-home {
+      border: none;
+      border-radius: 0.4rem;
+      background-color: white;
+      padding: 1rem;
+      margin: 0.5rem;
+      box-shadow: $shadow-hover;
+
+      img {
+        width: 1.5rem;
+      }
+
+      &:hover {
+        background: $rainbow-gradient-angular;
+        box-shadow: $shadow-hover;
+      }
+
+      .gif {
+        width: 50%;
+        height: 100vh;
+
+        #eyes-gif {
+          transition: opacity 0.5s ease-in-out;
+        }
+      }
+    }
+  }
+
+  #rrss-home {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 5rem;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    a img {
+      width: 5rem;
+      cursor: pointer;
+      border-radius: 100%;
+      &:hover {
+        box-shadow: $shadow-hover;
+      }
+    }
+
+    #rrss-home-line {
+      width: 1.5px;
+      height: 5rem;
+      margin: 0 2.5rem;
+      background-color: black;
+      border-radius: 50px;
+    }
+  }
+}
