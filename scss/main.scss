@@ -116,6 +116,9 @@ p {
     a img {
       width: 5rem;
       cursor: pointer;
+      border-radius: 100%;&:hover{
+        box-shadow: $shadow-hover;
+      }
     }
 
     #rrss-home-line {
@@ -150,6 +153,9 @@ p {
         margin: 0.5rem 0;
         list-style: none;
         font-size: 0.9rem;
+        & :hover {
+          cursor: pointer;
+        }
 
         img {
           width: 1rem;
@@ -187,6 +193,9 @@ p {
 // ---------------- ABOUT ----------------
 
 #about {
+  /* .container{
+    padding: 0;
+  } */
   article {
     width: 60%;
   }
@@ -253,11 +262,52 @@ p {
 }
 .card:hover {
   filter: grayscale(0%);
-  transform: scale(1.01); /* apenas más grande */
+  transform: scale(1.03);
   box-shadow: $shadow-hover;
 }
 
 // ---------------- SKILLS ----------------
+
+#skills {
+  .row {
+    height: 82%;
+  }
+  #skills-content {
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    img {
+      max-width: 70px;
+      height: auto;
+      margin: 0 0.5rem 0.5rem 0;
+      filter: grayscale(100%);
+      transform: scale(1);
+      transition: filter 0.3s ease, transform 0.4s ease;
+    }
+    img:hover {
+      filter: grayscale(0%);
+      transform: scale(1.05);
+      box-shadow: $shadow-hover;
+    }
+    figure {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      img {
+        filter: grayscale(0%);
+        max-width: 55px;
+      &:hover {
+        box-shadow: none;
+      }}
+      figcaption {
+        text-align: center;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
 // ---------------- CONTACT FORM ----------------
 
 .contact-content {
@@ -507,9 +557,10 @@ p {
   .subtitle {
     text-align: center;
   }
+
   @media screen and (max-width: 768px) {
     #home {
-      position: relative; // NECESARIO para que el absolute funcione
+      position: relative;
       height: 100vh;
       margin-bottom: 0;
 
@@ -533,7 +584,6 @@ p {
         width: 75%;
       }
 
-      // 👇 Esta parte asegura que el gif quede pegado al fondo centrado
       #eyes-gif {
         position: absolute;
         bottom: 0;
@@ -544,35 +594,6 @@ p {
       }
     }
   }
-  /* #home {
-    margin-bottom: 0;
-    height: 100vh;
-    .container {
-      margin-bottom: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
-      position: relative;
-      border: none;
-
-      article {
-        height: auto;
-        position: relative;
-
-        .gif {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-        }
-      }
-
-      .big-signature {
-        margin-top: 3rem;
-        width: 75%;
-      }
-    }
-  } */
 
   #about {
     margin-top: 0;
@@ -648,8 +669,17 @@ p {
   }
 
   #skills {
-    .container {
-      padding-bottom: 3rem;
+    #skills-content {
+      .container {
+        padding-bottom: 3rem;
+      }
+      h3 {
+        text-align: center;
+        margin: 2rem 0 1.3rem;
+      }
+      img {
+        filter: grayscale(0%);
+      }
     }
   }
 
