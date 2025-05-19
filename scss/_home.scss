@@ -19,19 +19,14 @@
 
     .btn-home {
       border: none;
-      border-radius: 0.4rem;
+      /* border-radius: 0.4rem;
       background-color: white;
-      padding: 1rem;
-      margin: 0.5rem;
       box-shadow: $shadow-hover;
+      padding: 1rem; */
+      margin: 0.5rem;
 
       img {
-        width: 1.5rem;
-      }
-
-      &:hover {
-        background: $rainbow-gradient-angular;
-        box-shadow: $shadow-hover;
+        width: 2.5rem;
       }
 
       .gif {

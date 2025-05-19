@@ -4,9 +4,13 @@ import { updateSectionIcon } from "./menus.js";
 let currentSection = "#home";
 
 export function showSection(sectionId) {
+  if (currentSection === sectionId) return;
+
   const { exit, enter } = getTransitionAnimation(currentSection, sectionId);
   transitionSection(currentSection, sectionId, exit, enter);
   currentSection = sectionId;
+
+  history.replaceState(null, "", sectionId);
 
   const sectionKey = sectionId.replace("#", "");
   document.querySelectorAll(".side-menu").forEach((menu) => {
@@ -66,8 +70,53 @@ export function setupNavigation() {
 }
 
 export function showInitialSections() {
-  ["#home", "#about", "#projects", "#skills", "#contact"].forEach(show);
+  const validSections = ["#home", "#about", "#projects", "#skills", "#contact"];
+  const hash = window.location.hash;
+
+  if (validSections.includes(hash) && hash !== "#home") {
+    currentSection = hash;
+  } else {
+    currentSection = "#home";
+  }
+
+  validSections.forEach((sectionId) => {
+    const el = document.querySelector(sectionId);
+    if (el) {
+      el.classList.add("hidden");
+      el.classList.remove("visible");
+      el.style.display = "none";
+    }
+  });
+
+  const currentEl = document.querySelector(currentSection);
+  if (currentEl) {
+    currentEl.classList.remove("hidden");
+    currentEl.classList.add("visible");
+    currentEl.style.display = "flex";
+  }
+
+  const sectionKey = currentSection.replace("#", "");
+  document.querySelectorAll(".side-menu").forEach((menu) => {
+    menu.querySelectorAll(".side-btn").forEach((btn) => {
+      btn.classList.remove("active");
+    });
+
+    const activeBtn = menu.querySelector(`.side-btn-${sectionKey}`);
+    if (activeBtn) {
+      activeBtn.classList.add("active");
+      updateSectionIcon(sectionKey);
+    }
+  });
 }
+
+window.addEventListener("hashchange", () => {
+  const hash = window.location.hash;
+  const validSections = ["#home", "#about", "#projects", "#skills", "#contact"];
+
+  if (validSections.includes(hash)) {
+    showSection(hash);
+  }
+});
 
 /* Mapa de transiciones ------------------------------------------------------------------------------------------ */
 const transitionMap = {

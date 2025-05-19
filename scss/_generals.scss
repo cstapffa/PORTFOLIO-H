@@ -56,10 +56,14 @@ p {
 .side-menu {
   padding: 0;
   height: 78vh;
+  a {
+    text-decoration: none;
+    color: $black;
+  }
   .side-menu-logo {
-    width: 40%;
+    width: 20%;
     height: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
   div {
     height: 100%;

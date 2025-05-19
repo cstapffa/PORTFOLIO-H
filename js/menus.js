@@ -3,7 +3,7 @@ import { showSection } from "./router.js";
 export function setupSideMenus() {
   const sideMenus = document.querySelectorAll(".side-menu");
   const menuHTML = `
-  <img class="side-menu-logo" src="https://res.cloudinary.com/dpushmfs0/image/upload/v1747270191/mirada-2_u4baus.png" alt="Mila" title="Mila">
+  <img class="side-menu-logo" src="https://res.cloudinary.com/dpushmfs0/image/upload/v1746392843/mila_rz6bn0.png" alt="Mila" title="Mila">
   <div class="d-flex flex-column justify-content-between">
     <ul>
       <li class="side-btn side-btn-about">
@@ -96,4 +96,3 @@ export function updateSectionIcon(sectionKey) {
     });
   });
 }
-
