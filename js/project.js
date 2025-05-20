@@ -1,4 +1,4 @@
-import { hide, show } from "./helpers.js";
+import { show } from "./helpers.js";
 
 const urlParams = new URLSearchParams(window.location.search);
 const projectId = urlParams.get("id");
@@ -371,8 +371,7 @@ if (project) {
                   <h2>Outcome</h2>
                   <p>${project.outcome}</p>
                 </div>
-                  <a href="https://www.behance.net/gallery/225719531/EnKoncreto-Case-Study-WEB-DESIGN" class="btn btn-explore">See more in Behance</a>
-              </article>
+                                </article>
             </div>
           </div>
         </div>
@@ -526,3 +525,25 @@ function showInitialProjectSections() {
     firstSection.style.display = "flex";
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  /* Responsive */
+  const isMobile = window.innerWidth <= 768;
+
+  if (isMobile) {
+    const sections = [
+      "#project-overview",
+      "#project-context",
+      "#project-design",
+      "#project-outcome",
+    ];
+
+    sections.forEach((selector) => {
+      const element = document.querySelector(selector);
+      if (element) {
+        element.style.display = "block";
+        show(selector);
+      }
+    });
+  }
+});

@@ -1,6 +1,7 @@
 import { setupNavigation, showInitialSections } from "./router.js";
 import { setupSideMenus } from "./menus.js";
 import { startGIF, setupTextarea } from "./visuals.js";
+import { show } from "./helpers.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   showInitialSections();
@@ -13,11 +14,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const isMobile = window.innerWidth <= 768;
 
   if (isMobile) {
-    show("#home");
-    show("#about");
-    show("#projects");
-    show("#skills");
-    show("#contact");
+    const sections = ["#home", "#about", "#projects", "#skills", "#contact"];
+
+    sections.forEach((selector) => {
+      const element = document.querySelector(selector);
+      if (element) {
+        element.style.display = "block";
+        show(selector);
+      }
+    });
   }
 });
 
