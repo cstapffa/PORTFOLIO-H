@@ -138,12 +138,8 @@ if (project) {
 
               <ul>
                 <li class="side-btn side-btn-back">
-                  <a href="index.html"
-                    ><img
-                      src="https://res.cloudinary.com/dpushmfs0/image/upload/v1746408186/back_maml1x.png"
-                      alt="icon"
-                    /><span>Back</span></a
-                  >
+                  <img src="https://res.cloudinary.com/dpushmfs0/image/upload/v1746408186/back_maml1x.png" alt="icon"/>
+                  <span>Back</span>
                 </li>
               </ul>
             </div>
@@ -364,6 +360,13 @@ if (project) {
   `;
 }
 
+document.querySelectorAll(".side-btn-back").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.location.href = "index.html#projects";
+  });
+});
+
 let currentProjectSection = "#project-overview";
 
 function showProjectSection(sectionId) {
@@ -372,6 +375,7 @@ function showProjectSection(sectionId) {
 
   if (currentProjectSection === sectionId) return;
 
+  // Si la sección origen no está visible, hacemos cambio sin animación
   if (!fromEl || fromEl.classList.contains("hidden")) {
     [
       "#project-overview",
@@ -397,6 +401,7 @@ function showProjectSection(sectionId) {
     return;
   }
 
+  // Si la sección origen está visible, hacemos transición animada
   const { exit, enter } = getProjectTransitionAnimation(
     currentProjectSection,
     sectionId
@@ -443,14 +448,17 @@ function transitionSection(fromId, toId, exitSection, enterSection) {
 }
 
 function getProjectTransitionAnimation(from, to) {
-
+  // Siempre animar salida hacia arriba y entrada desde abajo
   return {
     exit: "exitUpSection",
     enter: "enterDownSection",
   };
 }
 
-
+/**
+ * Setup navigation usando event delegation.
+ * Escuchamos clicks en todo el documento y filtramos clicks dentro de cualquier .side-menu.
+ */
 function setupProjectNavigationDelegation() {
   document.addEventListener("click", (e) => {
     const sideBtn = e.target.closest(".side-btn");
@@ -459,7 +467,7 @@ function setupProjectNavigationDelegation() {
     const sideMenu = sideBtn.closest(".side-menu");
     if (!sideMenu) return;
 
-
+    // Prevenir comportamiento por defecto si es un <a> dentro del botón (excepto back que tiene link)
     if (e.target.tagName === "A" || sideBtn.querySelector("a")) {
       e.preventDefault();
     }
@@ -473,7 +481,7 @@ function setupProjectNavigationDelegation() {
     } else if (sideBtn.classList.contains("side-btn-outcome")) {
       showProjectSection("#project-outcome");
     }
-
+    // El botón back tiene un <a href="index.html">, dejamos que funcione normalmente
   });
 }
 
@@ -500,6 +508,7 @@ function showInitialProjectSections() {
   }
 }
 
+/* Mapa de transiciones (ya no se usa, pero lo dejo por si quieres usarlo luego) */
 const projectTransitionMap = {
   "#project-overview->#project-context": {
     exit: "exitLeftSection",
@@ -552,5 +561,5 @@ const projectTransitionMap = {
   "#project-outcome->#project-overview": {
     exit: "exitRightSection",
     enter: "enterLeftSection",
-  },
+  },
 };
