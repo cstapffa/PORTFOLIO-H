@@ -21,14 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Get all cards
 const projectCards = document.querySelectorAll(".card");
 
 projectCards.forEach((card) => {
   card.addEventListener("click", () => {
     const id = card.getAttribute("data-id");
     if (id) {
-      // Redirect with project ID in query param
       window.location.href = `project.html?id=${id}`;
     }
   });
