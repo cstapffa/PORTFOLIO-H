@@ -42,7 +42,7 @@ const hoverImages = [
   {
     id: "contact-btn",
     defaultSrc:
-      "https://res.cloudinary.com/dpushmfs0/image/upload/v1747667692/contact-grey_cxysou.svg",
+      "https://res.cloudinary.com/dpushmfs0/image/upload/v1749598799/contact-grey_nvzkor.svg",
     hoverSrc:
       "https://res.cloudinary.com/dpushmfs0/image/upload/v1747667693/contact-color_vv5ti0.svg",
   },
